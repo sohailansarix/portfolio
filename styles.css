@@ -255,6 +255,8 @@ nav {
     padding: 100px 50px;
     background: #f9f9f9;
     text-align: center;
+    position: relative;
+    z-index: 1;
 }
 
 .portfolio h2 {
@@ -268,7 +270,7 @@ nav {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 0 auto 50px; /* Added bottom margin to separate from achievements */
 }
 
 .portfolio-item {
@@ -276,7 +278,7 @@ nav {
     overflow: hidden;
     border-radius: 15px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    min-height: 400px; /* Increased to ensure all text is visible */
+    min-height: 400px; /* Ensured height to fit content */
     background: #34495e;
     color: #fff;
     padding: 20px;
@@ -287,10 +289,10 @@ nav {
 
 .portfolio-item img {
     width: 100%;
-    height: 150px; /* Consistent image height */
-    object-fit: contain; /* Ensures the entire image is visible */
+    height: 150px;
+    object-fit: contain;
     border-radius: 10px;
-    margin-bottom: 15px; /* Space between image and text */
+    margin-bottom: 15px;
     transition: transform 0.3s ease;
 }
 
@@ -303,8 +305,8 @@ nav {
     width: 100%;
     padding: 15px;
     text-align: left;
-    flex-grow: 1; /* Allows text to expand */
-    overflow: auto; /* Scroll if text exceeds height */
+    flex-grow: 1;
+    overflow: auto;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -321,7 +323,7 @@ nav {
     margin-bottom: 20px;
     color: #ddd;
     line-height: 1.6;
-    flex-grow: 1; /* Pushes button to bottom */
+    flex-grow: 1;
 }
 
 .portfolio-overlay .cta-button {
@@ -332,8 +334,8 @@ nav {
     text-decoration: none;
     border-radius: 8px;
     font-weight: 600;
-    align-self: flex-end; /* Keeps button at bottom */
-    margin-top: 10px; /* Space above button */
+    align-self: flex-end;
+    margin-top: 10px;
     transition: background 0.3s ease;
 }
 
@@ -346,13 +348,18 @@ nav {
         padding: 60px 20px;
     }
 
+    .portfolio-grid {
+        grid-template-columns: 1fr; /* Single column on mobile */
+        gap: 20px;
+    }
+
     .portfolio-item {
-        min-height: 450px; /* Increased for mobile to accommodate text */
+        min-height: 450px;
         padding: 15px;
     }
 
     .portfolio-item img {
-        height: 120px; /* Adjusted for mobile */
+        height: 120px;
     }
 
     .portfolio-overlay h3 {
@@ -374,6 +381,8 @@ nav {
     padding: 100px 50px;
     background: #fff;
     text-align: center;
+    position: relative;
+    z-index: 1;
 }
 
 .achievements h2 {
@@ -411,6 +420,29 @@ nav {
 .achievement-item p {
     font-size: 1.1rem;
     color: #666;
+}
+
+@media (max-width: 768px) {
+    .achievements {
+        padding: 60px 20px;
+    }
+
+    .achievements-grid {
+        grid-template-columns: 1fr; /* Single column on mobile */
+        gap: 20px;
+    }
+
+    .achievement-item {
+        padding: 20px;
+    }
+
+    .achievement-item h3 {
+        font-size: 1.4rem;
+    }
+
+    .achievement-item p {
+        font-size: 1rem;
+    }
 }
 
 /* Social Media Section */
