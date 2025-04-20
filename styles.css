@@ -468,7 +468,10 @@ footer {
     background: #1a252f;
     color: #fff;
     text-align: center;
-    padding: 20px;
+    padding: 20px 0;
+    width: 100%;
+    position: relative;
+    bottom: 0;
     opacity: 0;
     transition: opacity 0.5s ease;
 }
@@ -477,9 +480,13 @@ footer.visible {
     opacity: 1;
 }
 
+.footer-social {
+    margin-top: 10px;
+}
+
 .footer-social a {
     color: #fff;
-    margin: 0 10px;
+    margin: 0 15px;
     font-size: 1.5rem;
     transition: color 0.3s ease;
 }
@@ -488,49 +495,25 @@ footer.visible {
     color: #e74c3c;
 }
 
-/* Animations and Responsiveness */
-.animate__fadeIn {
-    animation-duration: 1s;
-}
-
-.animate__fadeInUp {
-    animation-duration: 1s;
-}
-
-.animate__slideInUp {
-    animation-duration: 1s;
-}
-
-.animate__bounceIn {
-    animation-duration: 1s;
-}
-
 @media (max-width: 768px) {
-    .hero-content h1 {
-        font-size: 2rem;
+    footer {
+        padding: 15px 0;
     }
 
-    .hero-content h2 {
+    .footer-social a {
         font-size: 1.3rem;
+        margin: 0 10px;
     }
+}
 
-    .hero-content p {
-        font-size: 1rem;
+/* Animation Keyframes */
+@keyframes slideInUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
     }
-
-    .about-text h2 {
-        font-size: 2rem;
-    }
-
-    .about-text p {
-        font-size: 1rem;
-    }
-
-    .portfolio h2, .achievements h2, .social h2, .contact h2 {
-        font-size: 2rem;
-    }
-
-    .portfolio-grid, .achievements-grid {
-        grid-template-columns: 1fr;
+    to {
+        transform: translateY(0);
+        opacity: 1;
     }
 }
