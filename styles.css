@@ -276,7 +276,7 @@ nav {
     overflow: hidden;
     border-radius: 15px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    min-height: 300px; /* Increased minimum height for better visibility */
+    min-height: 400px; /* Increased to ensure all text is visible */
     background: #34495e;
     color: #fff;
     padding: 20px;
@@ -287,28 +287,32 @@ nav {
 
 .portfolio-item img {
     width: 100%;
-    height: 150px; /* Reduced image height to allow more space for text */
-    object-fit: cover;
-    transition: transform 0.3s ease;
+    height: 150px; /* Consistent image height */
+    object-fit: contain; /* Ensures the entire image is visible */
     border-radius: 10px;
+    margin-bottom: 15px; /* Space between image and text */
+    transition: transform 0.3s ease;
 }
 
 .portfolio-item:hover img {
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
 .portfolio-overlay {
-    position: static; /* Changed to static to allow natural flow with text */
+    position: static;
     width: 100%;
     padding: 15px;
     text-align: left;
-    flex-grow: 1; /* Allows text to expand within the container */
-    overflow: auto; /* Enables scrolling if text exceeds height */
+    flex-grow: 1; /* Allows text to expand */
+    overflow: auto; /* Scroll if text exceeds height */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .portfolio-overlay h3 {
     font-size: 1.8rem;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
     color: #e74c3c;
 }
 
@@ -316,7 +320,8 @@ nav {
     font-size: 1.1rem;
     margin-bottom: 20px;
     color: #ddd;
-    line-height: 1.6; /* Improved readability with line spacing */
+    line-height: 1.6;
+    flex-grow: 1; /* Pushes button to bottom */
 }
 
 .portfolio-overlay .cta-button {
@@ -327,8 +332,9 @@ nav {
     text-decoration: none;
     border-radius: 8px;
     font-weight: 600;
+    align-self: flex-end; /* Keeps button at bottom */
+    margin-top: 10px; /* Space above button */
     transition: background 0.3s ease;
-    align-self: flex-end; /* Positions button at the bottom */
 }
 
 .portfolio-overlay .cta-button:hover {
@@ -341,7 +347,7 @@ nav {
     }
 
     .portfolio-item {
-        min-height: 350px; /* Increased for mobile to ensure text visibility */
+        min-height: 450px; /* Increased for mobile to accommodate text */
         padding: 15px;
     }
 
@@ -354,6 +360,11 @@ nav {
     }
 
     .portfolio-overlay p {
+        font-size: 1rem;
+    }
+
+    .portfolio-overlay .cta-button {
+        padding: 8px 15px;
         font-size: 1rem;
     }
 }
